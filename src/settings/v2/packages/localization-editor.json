@@ -1,0 +1,17 @@
+{
+  "__version__": "1.0.1",
+  "L10nEnable": true,
+  "ProjectConfig": {
+    "localLanguage": "en",
+    "scanOptions": [
+      {
+        "dirs": [
+          "",
+          "..\\extensions\\shared-components"
+        ],
+        "extNames": [],
+        "excludes": []
+      }
+    ]
+  }
+}

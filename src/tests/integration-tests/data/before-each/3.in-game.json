@@ -1,0 +1,68 @@
+[
+    {
+        "name": "In Game",
+        "server": {
+            "waitForRequest": {
+                "namespace": "/user/spaceflight",
+                "event": "inGame",
+                "payload": null
+            },
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "roundId": 2,
+                        "gameConfigs": {
+                            "_id": "64993d4a7d27c898f074f5ad",
+                            "groupId": "61765beed2b6510001f18bd6",
+                            "minBet": 1,
+                            "maxBet": 2000,
+                            "maxBetPerChoices": {},
+                            "chips": ["1", "2", "5", "10", "50", "100", "200", "500", "1000", "2000"],
+                            "stakeLevels": [],
+                            "odds": {},
+                            "originalOdds": {},
+                            "enableFreeBet": false
+                        },
+                        "roundHistory": [
+                            {
+                                "roundId": 1,
+                                "result": 2.09,
+                                "md5Result": {
+                                    "hashValue": "5db2d9bb86be26f9870d5e1f9e5ec29d",
+                                    "rawValue": "{2.09}_{#20492716b4713d20ae38de2eec}",
+                                    "roundId": 1
+                                }
+                            }
+                        ],
+                        "ownBets": {},
+                        "totalBets": {},
+                        "user": {
+                            "name": "Conall",
+                            "UID": 1234,
+                            "avatarId": 83,
+                            "currency": "$US",
+                            "red": 2000,
+                            "scoins": 0,
+                            "type": false,
+                            "rate": 1
+                        },
+                        "resultHash": {
+                            "hashValue": "f8950e1ca004470099cafc33e8a439b9"
+                        },
+                        "remainingTime": 6,
+                        "players": {},
+                        "chips": {}
+                    }
+                }
+            ]
+        },
+        "client": {
+            "waitUntilMetExpectation": true,
+            "waitExpectationTimeout": 120000,
+            "actual": "Integration.label('balance')",
+            "expected": "2,000"
+        }
+    }
+]

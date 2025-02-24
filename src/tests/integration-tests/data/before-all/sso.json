@@ -1,0 +1,26 @@
+{
+    "name": "SSO",
+    "server": {
+        "waitForRequest": {
+            "namespace": "/user/auth/sso?token=x&system=1",
+            "event": "get",
+            "payload": {}
+        },
+        "response": [
+            {
+                "namespace": "/user/auth/sso?token=x&system=1",
+                "event": "get",
+                "payload": {
+                    "isAuthenticated": true,
+                    "umInfo": null,
+                    "username": "username",
+                    "language": "vi-VN",
+                    "ss": "ss",
+                    "system": 1,
+                    "memberName": "username",
+                    "isUM": false
+                }
+            }
+        ]
+    }
+}

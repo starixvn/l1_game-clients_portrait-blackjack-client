@@ -1,0 +1,993 @@
+[
+    {
+        "name": "multiple is 1",
+        "server": {
+            "delay": 6000,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1,
+                            "t": 0
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.01",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.01,
+                            "t": 202
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.02",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.02,
+                            "t": 404
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.03",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.03,
+                            "t": 708
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.04",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.04,
+                            "t": 912
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.05",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.05,
+                            "t": 1113
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.06",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.06,
+                            "t": 1315
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.07",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.07,
+                            "t": 1517
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.08",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.08,
+                            "t": 1720
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.09",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.09,
+                            "t": 1821
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.1",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.1,
+                            "t": 2023
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.11",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.11,
+                            "t": 2227
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.12",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.12,
+                            "t": 2328
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.13",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.13,
+                            "t": 2531
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.14",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.14,
+                            "t": 2632
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.15",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.15,
+                            "t": 2835
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.16",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.16,
+                            "t": 2935
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.17",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.17,
+                            "t": 3037
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.18",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.18,
+                            "t": 3239
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.19",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.19,
+                            "t": 3340
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.2",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.2,
+                            "t": 3441
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "multiple is 1.21",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.21,
+                            "t": 3542
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.22",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.22,
+                            "t": 3744
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.23",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.23,
+                            "t": 3846
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.24",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.24,
+                            "t": 3947
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.25",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.25,
+                            "t": 4050
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.26",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.26,
+                            "t": 4150
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.27",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.27,
+                            "t": 4252
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "multiple is 1.28",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.28,
+                            "t": 4353
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.29",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.29,
+                            "t": 4454
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.3",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.3,
+                            "t": 4556
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.31",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.31,
+                            "t": 4657
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.32",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.32,
+                            "t": 4760
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.33",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.33,
+                            "t": 4861
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.34",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.34,
+                            "t": 4963
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.35",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.35,
+                            "t": 5064
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.36",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.36,
+                            "t": 5165
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.38",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.38,
+                            "t": 5267
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.39",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.39,
+                            "t": 5368
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.4",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.4,
+                            "t": 5469
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.41",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.41,
+                            "t": 5570
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.42",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.42,
+                            "t": 5671
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.44",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.44,
+                            "t": 5772
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.45",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.45,
+                            "t": 5873
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.46",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.46,
+                            "t": 5974
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.48",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.48,
+                            "t": 6075
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.49",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.49,
+                            "t": 6176
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "multiple is 1.5",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "c": {
+                            "m": 1.5,
+                            "t": 6278
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "settle",
+        "server": {
+            "delay": 100,
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "finish": {
+                            "result": 1.5,
+                            "md5Result": {
+                                "hashValue": "25c0cf2d4ddea4bbec9a8781c3168a6b",
+                                "rawValue": "{1.50}_{#227072e7fe234bb2bc5dd39152}"
+                            },
+                            "roundId": 2,
+                            "winningPlayers": {}
+                        },
+                        "resultHash": {
+                            "rawValue": "{1.50}_{#227072e7fe234bb2bc5dd39152}",
+                            "extraInfos": 1.5
+                        }
+                    }
+                },
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "status": {
+                            "win": false,
+                            "bet": 1
+                        }
+                    }
+                },
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "Spaceflight",
+                    "payload": {
+                        "winners": {
+                            "roundId": 2
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "get balance",
+        "server": {
+            "waitForRequest": {
+                "namespace": "/user/auth/balance",
+                "event": "post",
+                "payload": {
+                    "session": "ss",
+                    "username": "username"
+                }
+            },
+            "response": [
+                {
+                    "namespace": "/user/auth/balance",
+                    "event": "post",
+                    "payload": {
+                        "errorCode": "0",
+                        "message": null,
+                        "umInfo": null,
+                        "isSuccessful": true,
+                        "isUM": false,
+                        "balance": 1999,
+                        "scoins": 0,
+                        "availableSpins": 0
+                    }
+                }
+            ]
+        },
+        "client": {
+            "waitUntilMetExpectation": true,
+            "waitExpectationTimeout": 60000,
+            "actual": "Integration.label('balance')",
+            "delayForAssert": 10000,
+            "expected": "1,999"
+        }
+    }
+]

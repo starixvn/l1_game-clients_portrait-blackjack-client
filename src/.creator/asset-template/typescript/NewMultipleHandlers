@@ -1,0 +1,17 @@
+import { inject, injectable } from "inversify";
+
+import { IMultipleHandlers } from "../../shared";
+
+@injectable()
+export class MultipleHandlers implements IMultipleHandlers {
+    constructor(@inject(YourStore) protected readonly store: YourStore) {}
+
+    eventHandleList = [
+        {
+            name: "event_name",
+            handle: this.handleEvent,
+        },
+    ];
+
+    handleEvent() {}
+}

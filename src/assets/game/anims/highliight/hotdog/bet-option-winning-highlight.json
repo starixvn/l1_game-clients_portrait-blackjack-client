@@ -1,0 +1,102 @@
+{
+"skeleton": { "hash": "VpBWy7KTdCnTExQR6d6ENSyZN/g", "spine": "3.8.99" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "main-bet-option-highlight", "parent": "root" },
+	{ "name": "main-bet-option-tie-highlight", "parent": "root" },
+	{ "name": "sub-bet-option-highlight", "parent": "root", "rotation": -0.08 }
+],
+"slots": [
+	{ "name": "main-bet-option-highlight", "bone": "main-bet-option-highlight" },
+	{ "name": "main-bet-option-tie-highlight", "bone": "main-bet-option-tie-highlight" },
+	{ "name": "sub-bet-option-highlight", "bone": "sub-bet-option-highlight" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"main-bet-option-highlight": {
+				"main-bet-option-highlight": { "width": 248, "height": 302 }
+			},
+			"main-bet-option-tie-highlight": {
+				"main-bet-option-tie-highlight": { "width": 246, "height": 302 }
+			},
+			"sub-bet-option-highlight": {
+				"sub-bet-option-highlight": { "width": 122, "height": 178 }
+			}
+		}
+	}
+],
+"animations": {
+	"main": {
+		"slots": {
+			"main-bet-option-highlight": {
+				"color": [
+					{ "color": "ffffffff" },
+					{ "time": 0.2667, "color": "ffffff81" },
+					{ "time": 0.5, "color": "ffffffff" }
+				],
+				"attachment": [
+					{ "name": "main-bet-option-highlight" }
+				]
+			},
+			"main-bet-option-tie-highlight": {
+				"color": [
+					{ "color": "ffffffff" },
+					{ "time": 0.2667, "color": "ffffff9e" },
+					{ "time": 0.5, "color": "ffffffff" }
+				]
+			}
+		}
+	},
+	"sub": {
+		"slots": {
+			"main-bet-option-highlight": {
+				"color": [
+					{ "color": "ffffffff" },
+					{ "time": 0.2667, "color": "ffffff9e" },
+					{ "time": 0.5, "color": "ffffffff" }
+				]
+			},
+			"main-bet-option-tie-highlight": {
+				"color": [
+					{ "color": "ffffffff" },
+					{ "time": 0.2667, "color": "ffffff9e" },
+					{ "time": 0.5, "color": "ffffffff" }
+				]
+			},
+			"sub-bet-option-highlight": {
+				"color": [
+					{ "color": "ffffffff" },
+					{ "time": 0.2667, "color": "ffffff9e" },
+					{ "time": 0.5, "color": "ffffffff" }
+				],
+				"attachment": [
+					{ "name": "sub-bet-option-highlight" }
+				]
+			}
+		}
+	},
+	"triple": {
+		"slots": {
+			"main-bet-option-highlight": {
+				"color": [
+					{ "color": "ffffffff" },
+					{ "time": 0.2667, "color": "ffffff9e" },
+					{ "time": 0.5, "color": "ffffffff" }
+				]
+			},
+			"main-bet-option-tie-highlight": {
+				"color": [
+					{ "color": "ffffffff" },
+					{ "time": 0.2667, "color": "ffffff9e" },
+					{ "time": 0.5, "color": "ffffffff" }
+				],
+				"attachment": [
+					{ "name": "main-bet-option-tie-highlight" }
+				]
+			}
+		}
+	}
+}
+}

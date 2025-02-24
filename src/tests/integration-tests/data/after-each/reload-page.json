@@ -1,0 +1,7 @@
+{
+    "name": "Reload page",
+    "client": {
+        "delayForAction": 1000,
+        "action": "window.location.reload()"
+    }
+}

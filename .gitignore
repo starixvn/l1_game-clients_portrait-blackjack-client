@@ -1,0 +1,16 @@
+node_modules/
+dist/
+coverage/
+reports/
+
+yarn.lock
+
+/examples/cocos-3x/profiles/v2/packages/scene.json
+/src/profiles/v2/packages/scene.json
+*/library/*
+*/temp/*
+graphics/.pack_cache.json
+src/extensions/ccc-skeleton-viewer
+
+.codegpt
+!src/preview-template/dist

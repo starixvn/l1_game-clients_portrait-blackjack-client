@@ -1,0 +1,7 @@
+{
+    "dice_shake": {
+        "bundle": "resources",
+        "path": "dice_shake",
+        "isLazyLoad": true
+    }
+}

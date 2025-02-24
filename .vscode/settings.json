@@ -1,0 +1,8 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": ["integration-tests/**/*.json"],
+            "url": "./src/node_modules/@sg/cocos-integration-testing/schema.json"
+        }
+    ]
+}

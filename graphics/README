@@ -1,0 +1,4 @@
+-   run yarn for installation.
+    yarn
+-   run python file for pack resources
+    python pack-resources.py

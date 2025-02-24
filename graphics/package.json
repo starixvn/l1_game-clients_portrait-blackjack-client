@@ -1,0 +1,19 @@
+{
+    "name": "pack-resource",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "pack-images": "npm install && python pack-resources.py"
+    },
+    "dependencies": {
+        "argparse": "^2.0.1",
+        "async-mutex": "^0.4.0",
+        "fs-extra": "^11.1.1",
+        "glob": "7.1.6",
+        "jszip": "^3.10.1",
+        "md5": "^2.3.0",
+        "node-fetch": "2",
+        "pako": "^2.1.0"
+    }
+}

@@ -1,0 +1,168 @@
+[
+    {
+        "name": "Auth",
+        "server": {
+            "waitForRequest": {
+                "namespace": "/user/auth/authorize",
+                "event": "post",
+                "payload": {
+                    "session": "ss",
+                    "username": "username"
+                }
+            },
+            "response": [
+                {
+                    "namespace": "/user/auth/authorize",
+                    "event": "post",
+                    "payload": {
+                        "authorized": true,
+                        "user": {
+                            "name": "Conall",
+                            "UID": 1234,
+                            "avatarId": 83,
+                            "currency": "$US",
+                            "isSignedInSM": false,
+                            "red": 2000,
+                            "scoins": 0,
+                            "settings": {
+                                "theme": ""
+                            },
+                            "offerGames": [
+                                {
+                                    "_id": "64993d4a7d27c898f074f5ad",
+                                    "gameId": 73,
+                                    "minBet": 1,
+                                    "maxBet": 2000,
+                                    "maxBetPerChoices": {}
+                                }
+                            ],
+                            "fractionalOddsFormat": true,
+                            "isDisplayPlayerCurrency": true
+                        },
+                        "umInfo": null,
+                        "isUM": false
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "Settings",
+        "server": {
+            "waitForRequest": {
+                "namespace": "/user/settings",
+                "event": "post",
+                "payload": {
+                    "session": "ss",
+                    "username": "username"
+                }
+            },
+            "response": [
+                {
+                    "namespace": "/user/settings",
+                    "event": "post",
+                    "payload": {
+                        "chips": [
+                            {
+                                "time": "0001-01-01T00:00:00.000Z",
+                                "text": "1",
+                                "value": 1,
+                                "color": "#848484"
+                            },
+                            {
+                                "time": "0001-01-01T00:00:00.000Z",
+                                "text": "2",
+                                "value": 2,
+                                "color": "#a335a7"
+                            },
+                            {
+                                "time": "0001-01-01T00:00:00.000Z",
+                                "text": "5",
+                                "value": 5,
+                                "color": "#2cb400"
+                            },
+                            {
+                                "time": "0001-01-01T00:00:00.000Z",
+                                "text": "10",
+                                "value": 10,
+                                "color": "#ff930d"
+                            },
+                            {
+                                "time": "0001-01-01T00:00:00.000Z",
+                                "text": "100",
+                                "value": 100,
+                                "color": "#1477ff"
+                            },
+                            {
+                                "time": "0001-01-01T00:00:00.000Z",
+                                "text": "200",
+                                "value": 200,
+                                "color": "#10e3ff"
+                            },
+                            {
+                                "time": "0001-01-01T00:00:00.000Z",
+                                "text": "500",
+                                "value": 500,
+                                "color": "#ff3818"
+                            },
+                            {
+                                "time": "0001-01-01T00:00:00.000Z",
+                                "text": "1K",
+                                "value": 1000,
+                                "color": "#193c66"
+                            },
+                            {
+                                "time": "0001-01-01T00:00:00.000Z",
+                                "text": "2K",
+                                "value": 2000,
+                                "color": "#8c6f01"
+                            },
+                            {
+                                "time": "0001-01-01T00:00:00.000Z",
+                                "text": "3K",
+                                "value": 3000,
+                                "color": "#222222"
+                            },
+                            {
+                                "time": "0001-01-01T00:00:00.000Z",
+                                "text": "5K",
+                                "value": 5000,
+                                "color": "#be000b"
+                            },
+                            {
+                                "time": "0001-01-01T00:00:00.000Z",
+                                "text": "10K",
+                                "value": 10000,
+                                "color": "#7b004b"
+                            },
+                            {
+                                "time": "0001-01-01T00:00:00.000Z",
+                                "text": "20K",
+                                "value": 20000,
+                                "color": "#007866"
+                            },
+                            {
+                                "time": "0001-01-01T00:00:00.000Z",
+                                "text": "50",
+                                "value": 50,
+                                "color": "#ff48e4"
+                            },
+                            {
+                                "time": "0001-01-01T00:00:00.000Z",
+                                "text": "30K",
+                                "value": 30000,
+                                "color": "#e93a3a"
+                            },
+                            {
+                                "time": "0001-01-01T00:00:00.000Z",
+                                "text": "3",
+                                "value": 3,
+                                "color": "#000000"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+]

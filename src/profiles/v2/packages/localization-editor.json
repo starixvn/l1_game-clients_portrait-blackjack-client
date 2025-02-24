@@ -1,0 +1,103 @@
+{
+  "__version__": "1.0.1",
+  "builder": {
+    "options": {
+      "web-mobile": {
+        "defaultLanguage": "en",
+        "targetLanguageMap": {
+          "en": {
+            "locale": "en",
+            "value": true
+          },
+          "id": {
+            "locale": "id",
+            "value": true
+          },
+          "th": {
+            "locale": "th",
+            "value": true
+          },
+          "vi": {
+            "locale": "vi",
+            "value": true
+          },
+          "zh-Hans": {
+            "locale": "zh-Hans",
+            "value": true
+          },
+          "zh-Hant": {
+            "locale": "zh-Hant",
+            "value": true
+          }
+        },
+        "fallbackLanguage": "en"
+      }
+    },
+    "taskOptionsMap": {
+      "1681353552761": {
+        "defaultLanguage": "en",
+        "targetLanguageMap": {
+          "en": {
+            "locale": "en",
+            "value": true
+          },
+          "id": {
+            "locale": "id",
+            "value": true
+          },
+          "th": {
+            "locale": "th",
+            "value": true
+          },
+          "vi": {
+            "locale": "vi",
+            "value": true
+          },
+          "zh-Hans": {
+            "locale": "zh-Hans",
+            "value": true
+          },
+          "zh-Hant": {
+            "locale": "zh-Hant",
+            "value": true
+          }
+        },
+        "fallbackLanguage": "en"
+      },
+      "1681353552761}": {
+        "defaultLanguage": "en",
+        "targetLanguageMap": {
+          "en": {
+            "locale": "en",
+            "value": true
+          },
+          "id": {
+            "locale": "id",
+            "value": true
+          },
+          "th": {
+            "locale": "th",
+            "value": true
+          },
+          "vi": {
+            "locale": "vi",
+            "value": true
+          },
+          "zh-Hans": {
+            "locale": "zh-Hans",
+            "value": true
+          },
+          "zh-Hant": {
+            "locale": "zh-Hant",
+            "value": true
+          }
+        },
+        "fallbackLanguage": "en"
+      }
+    },
+    "__version__": "1.3.4"
+  },
+  "EditorConfig": {
+    "currentPreview": "vi"
+  }
+}

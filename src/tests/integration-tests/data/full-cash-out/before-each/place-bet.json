@@ -1,0 +1,36 @@
+{
+    "name": "Place Bet",
+    "server": {
+        "waitForRequest": {
+            "namespace": "/user/spaceflight",
+            "event": "bet",
+            "payload": { "m": 1, "username": "Conall", "roundId": 2, "amount": 1, "freeBet": false }
+        },
+        "response": [
+            {
+                "namespace": "/user/spaceflight",
+                "event": "Spaceflight",
+                "payload": {
+                    "endBet": 1,
+                    "freeBet": false,
+                    "user": {
+                        "red": 1999,
+                        "scoins": 0,
+                        "minBet": 1,
+                        "maxBet": 3000
+                    },
+                    "ownChip": {
+                        "amount": 1
+                    }
+                }
+            }
+        ]
+    },
+    "client": {
+        "action": "Integration.click('place-bet-button')",
+        "waitUntilMetExpectation": true,
+        "waitExpectationTimeout": 60000,
+        "actual": "Integration.label('balance')",
+        "expected": "1,999"
+    }
+}

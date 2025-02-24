@@ -1,0 +1,69 @@
+{
+  "__version__": "1.0.1",
+  "builder": {
+    "common": {
+      "buildPath": "project://build",
+      "outputName": "web-mobile",
+      "mainBundleCompressionType": "merge_dep",
+      "platform": "web-mobile",
+      "useSplashScreen": false,
+      "skipCompressTexture": false,
+      "mainBundleIsRemote": false,
+      "startScene": "cdeb5c24-9ba8-4cab-a306-8a562fd04b39",
+      "scenes": [
+        {
+          "url": "db://assets/game/game.scene",
+          "uuid": "4229fd91-1ded-407f-b130-7b678b820c27",
+          "inBundle": false
+        },
+        {
+          "url": "db://assets/game/splash/splash.scene",
+          "uuid": "cdeb5c24-9ba8-4cab-a306-8a562fd04b39",
+          "inBundle": false
+        },
+        {
+          "url": "db://shared-components/feature-structure/scene.scene",
+          "uuid": "b97b166d-3dd1-4968-8fa8-488f447e05b0",
+          "inBundle": false
+        },
+        {
+          "url": "db://shared-components/session-timeout/session-timeout.scene",
+          "uuid": "1b4ca76d-3ce5-41e6-a47c-0fb1f85bb3f4",
+          "inBundle": false
+        },
+        {
+          "url": "db://shared-components/under-maintenance/under-maintenance.scene",
+          "uuid": "3640a00f-a2ed-4aec-b369-779ede63f5df",
+          "inBundle": false
+        }
+      ],
+      "polyfills": {
+        "asyncFunctions": true
+      },
+      "md5Cache": false,
+      "overwriteProjectSettings": {
+        "macroConfig": {
+          "cleanupImageCache": "off"
+        }
+      }
+    },
+    "options": {
+      "web-mobile": {
+        "orientation": "portrait",
+        "embedWebDebugger": false,
+        "__version__": "1.0.1",
+        "cullEngineAsmJsModule": false
+      }
+    },
+    "taskOptionsMap": {
+      "1681353552761": {
+        "orientation": "portrait",
+        "embedWebDebugger": false,
+        "__version__": "1.0.1",
+        "cullEngineAsmJsModule": false,
+        "useWebGPU": false
+      }
+    },
+    "__version__": "1.3.8"
+  }
+}

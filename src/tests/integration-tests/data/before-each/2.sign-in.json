@@ -1,0 +1,40 @@
+[
+    {
+        "name": "Sign In",
+        "server": {
+            "waitForRequest": {
+                "namespace": "/user/spaceflight",
+                "event": "signin",
+                "payload": {
+                    "ss": "ss",
+                    "username": "username",
+                    "system": 1
+                }
+            },
+            "response": [
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "message",
+                    "payload": {
+                        "userStakeLevel": {
+                            "minBet": 1,
+                            "maxBet": 3000
+                        }
+                    }
+                },
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "signedIn",
+                    "payload": {}
+                },
+                {
+                    "namespace": "/user/spaceflight",
+                    "event": "message",
+                    "payload": {
+                        "toGame": "Spaceflight"
+                    }
+                }
+            ]
+        }
+    }
+]

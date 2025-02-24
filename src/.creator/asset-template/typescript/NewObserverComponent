@@ -1,0 +1,17 @@
+import { _decorator, Component } from "cc";
+import gc from "@sg/game-client-base";
+import Observer from "observer";
+
+const { Connection } = gc;
+const { ccclass, property } = _decorator;
+const { observer, render, handle } = Observer;
+
+@ccclass
+@observer("observer-name")
+export default class ObserverComponent extends Component {
+    @render(Connection.ConnectionStore, (store) => store.signedIn)
+    onSignedIn(signedIn: boolean) {}
+
+    @handle(Connection.ConnectionHandlers.InGameHandler)
+    inGame() {}
+}

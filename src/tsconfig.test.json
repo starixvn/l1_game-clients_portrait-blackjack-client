@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "strict": false,
+        "outDir": "dist",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "resolveJsonModule": true,
+        "paths": {
+            "cc": ["./tests/cocos-testing/cc"],
+            "db://shared-components/*": ["./extensions/shared-components/assets/*"],
+            "db://direct-shared-components/*": ["./extensions/direct-shared-components/assets/*"],
+            "db://i18n/*": ["./extensions/i18n/assets/*"]
+        }
+    }
+}

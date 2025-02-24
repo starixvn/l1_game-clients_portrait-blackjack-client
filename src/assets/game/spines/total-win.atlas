@@ -1,0 +1,27 @@
+
+total-win.webp
+size: 131,772
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg-text
+  rotate: true
+  xy: 2, 2
+  size: 611, 127
+  orig: 617, 129
+  offset: 3, 1
+  index: -1
+sao
+  rotate: true
+  xy: 5, 615
+  size: 155, 49
+  orig: 186, 80
+  offset: 15, 18
+  index: -1
+text
+  rotate: false
+  xy: 2, 769
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
