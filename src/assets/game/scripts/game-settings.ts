@@ -5,17 +5,10 @@ import { sharedContainer } from "../../scripts/shared-container";
 
 export const settings = {
     id: 25,
-    name: "SicBo",
-    namespaces: ["SicBo"],
-    durations: {
-        wholeRound: 42,
-        lockingBet: 3,
-        placingBet: 30,
-        generatingResult: 4,
-        showingResult: 7,
-        startRound: 1,
-    },
-    numberOfRoundHistory: 100,
+    name: "Blackjack",
+    namespaces: [""],
+    durations: {} as any,
+    numberOfRoundHistory: 0,
 };
 
 export const containerOptions: gc.IContainerOptions = {
@@ -24,5 +17,5 @@ export const containerOptions: gc.IContainerOptions = {
         container.bind(gc.GameConfigs.GameSetting).toConstantValue(settings);
         container.bind(LogStore).to(LogStore);
     },
-    features: [...gc.defaultFeatures, gc.BetDetailsNew],
+    features: [...gc.GameBlackjack.features, gc.BetDetailsNew],
 };

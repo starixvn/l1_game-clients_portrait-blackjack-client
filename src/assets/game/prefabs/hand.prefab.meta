@@ -2,12 +2,12 @@
   "ver": "1.1.50",
   "importer": "prefab",
   "imported": true,
-  "uuid": "9da77c1a-a29d-49d1-a29c-9fdf6b184653",
+  "uuid": "a1782f15-a6c1-4e41-b2e0-f600fe2f7460",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "result"
+    "syncNodeName": "hand"
   }
 }

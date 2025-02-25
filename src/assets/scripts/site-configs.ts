@@ -14,19 +14,18 @@ const defaultConfig: gc.Configs.SiteConfigs = {
         localhost: "lumigame.com",
     },
     ssl: true,
-    subDomain: "hd-proxy",
+    subDomain: "l1-proxy1",
     env: "LOCAL",
     subGuideDomain: "hd-guide",
     SGConnectSubDomain: "connectsite",
     enableMsgpackParserAllGames: false,
     enableMsgpackParserOnNotification: false,
     websocket: {
-        proxyPath: "sicbo",
-        route: "sicbo",
+        proxyPath: "blackjack",
+        route: "blackjack",
     },
-    mainObserverNamespace: "SicBo",
+    mainObserverNamespace: "Blackjack",
     tolgeeUrl: "",
-    storagePrefixKey: "portrait_sicbo",
     backgroundNoTranslate: true,
 };
 

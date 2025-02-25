@@ -1,30 +1,38 @@
 import "./../../../resources/i18n";
 
 import gc from "@sg/game-client-base";
-import { _decorator, Node } from "cc";
+import { _decorator, Game, game, Label, Node } from "cc";
 import { AudioContainer } from "db://shared-components/game/audios/scripts/component/audio-container";
 import { ChipFlying } from "db://shared-components/game/chip-flying/scripts/components/chip-flying";
-import GameComponent from "db://shared-components/game/scripts/components/game-component";
+import { GameComponentBase } from "db://shared-components/game/scripts/components/game-component-base";
 import { startGame } from "db://shared-components/shared/scripts/startup";
 import Observer from "observer";
 
 import { siteConfigs } from "../../../scripts/site-configs";
 import { containerOptions, settings } from "../game-settings";
 import { GameResult } from "./game-result";
+import { StaticNode } from "db://shared-components/shared/common-components/static-node/scripts/static-node";
+import { StaticGroupId } from "db://shared-components/shared/common-components/static-node/scripts/static-node-info";
+import { ComponentUtils } from "db://shared-components/shared/utils";
 
-startGame(settings.name, containerOptions, siteConfigs, settings.namespaces.concat(["Baccarat", "ui"]));
-const { Rounds, RoundHistories } = gc;
+startGame(settings.name, containerOptions, siteConfigs, settings.namespaces);
+const { Connection, FormatUtils, GameBlackjack } = gc;
+// const { Rounds } = GameBlackjack;
 
 const { ccclass, property } = _decorator;
-const { observer, render } = Observer;
+const { observer, render, handle } = Observer;
 
 @ccclass
 @observer(settings.name)
-export default class Game extends GameComponent {
+export default class GameBlackjackComponent extends GameComponentBase {
+    @property(Label)
+    lblMinBet: Label = null;
+
+    @property(Label)
+    lblMaxBet: Label = null;
+
     @property(ChipFlying)
     chipFlying: ChipFlying = null;
-    override namespace = settings.name;
-    override containerOptions = containerOptions;
 
     @property(Node)
     nodeAudioContainer: Node = null;
@@ -32,89 +40,89 @@ export default class Game extends GameComponent {
     @property(GameResult)
     resultComp: GameResult = null;
 
+    override namespace = settings.name;
     protected enableFixHandleFinish = true;
+    protected enableEventShowHideGame = true;
+
     private audioContainer: AudioContainer = null;
     private isAnimatingResult = false;
     private prevResult: any;
     private currentRoundId: number;
 
     onLoad() {
+        this.registerEventShowHideGame();
+        this.initUserSettings();
+        this.initPlayerSelections();
+        this.handleStaticNodeAndSetEmptyLabels();
         this.audioContainer = this.nodeAudioContainer.getComponent(AudioContainer);
-
-        super.onLoad();
     }
 
-    @render(Rounds.RoundStore, (store) => store.clientRoundId)
-    updateCurrentRoundId(roundId: number) {
-        roundId > 0 && (this.currentRoundId = roundId);
-    }
-
-    @render(RoundHistories.RoundHistoryStore, (store) => store.histories)
-    async updatePrevResult(histories: gc.RoundHistories.RoundHistory) {
-        if (!histories) {
+    private registerEventShowHideGame() {
+        if (!this.enableEventShowHideGame) {
             return;
         }
-        this.prevResult = histories[0]?.result;
+        game.on(Game.EVENT_HIDE, this.onHideGame, this);
+        game.on(Game.EVENT_SHOW, this.onShowGame, this);
     }
 
-    async showResult(
-        result: gc.GameServiceMessage.TResult,
-        hasAnimation: boolean,
-        settlementResult: gc.GameServiceMessage.TSettlementResult
-    ) {
-        if (result) {
-            if (this.isAnimatingResult) {
-                return;
-            }
-            this.isAnimatingResult = true;
-
-            if (hasAnimation) {
-                this.playSound("dice_shake");
-                await this.resultComp.showResultAnim(this.prevResult, result, this.currentRoundId);
-            } else {
-                this.resultComp?.showResultNoAnim(result, this.currentRoundId);
-            }
-
-            this.isAnimatingResult = false;
+    protected handleStaticNodeAndSetEmptyLabels() {
+        const lblList: Label[] = [this?.lblMinBet, this?.lblMaxBet];
+        if (lblList.length > 0) {
+            lblList?.forEach((label) => {
+                if (label) {
+                    const component = label?.addComponent(StaticNode);
+                    component && (component.groupId = StaticGroupId.TextContainer);
+                }
+            });
+            ComponentUtils.setEmptyLabels(lblList);
         }
     }
 
-    async renderCurrentFinish(currentFinish: gc.GameServiceMessage.Finish) {
-        if (!currentFinish || !this.enableFixHandleFinish) {
-            return;
-        }
-        const { result, settlementResult } = currentFinish as any;
+    @handle(gc.UserSettings.UserSettingHandlers, (handle) => handle.loadStorages())
+    initUserSettings() {}
 
-        if (!this.isValidResult(result, settlementResult)) {
-            return;
-        }
+    @handle(gc.PlayerSelections.PlayerSelectionHandlers.InitHandlers)
+    initPlayerSelections() {}
 
-        this.showResult(result, true, settlementResult).then(() => {
-            this.finishShowResult(result, settlementResult);
-            this.chipFlying.callActionPayChips();
-        });
-        this.playSound(gc.Audios.AudioIds.RECEIVE_FINISH);
+    protected onDestroy(): void {
+        this.clearEventShowHideGame();
     }
 
-    @render(RoundHistories.RoundHistoryStore, (store) => store.firstJoinGameHistory)
-    async renderStaticResult(firstJoinGameHistory: gc.RoundHistories.IFirstJoinGameHistory) {
-        if (!firstJoinGameHistory) {
-            return;
-        }
-
-        const lastRound = firstJoinGameHistory.roundHistory as any;
-        if (lastRound) {
-            const { result, settlementResult } = lastRound;
-            this.showResult(result, false, settlementResult);
-        }
+    private clearEventShowHideGame() {
+        game.off(Game.EVENT_HIDE, this.onHideGame, this);
+        game.off(Game.EVENT_SHOW, this.onShowGame, this);
     }
 
-    @render(Rounds.RoundTimeStore, (store) => store.roundState)
-    fadeVolumeBgMusic(roundState: string) {
-        if (roundState === Rounds.ROUND_STATE.LOCKING_BET) {
-            this.audioContainer.updateVolumeMusicSource(0.3, 3);
-        } else if (roundState === Rounds.ROUND_STATE.SHOW_RESULT) {
-            this.audioContainer.updateVolumeMusicSource(1, 3);
-        }
+    private onShowGame() {
+        window.location.reload();
+    }
+
+    private onHideGame() {}
+
+    @handle(gc.Connection.ConnectionHandlers.ConnectHandler)
+    connectToService() {}
+
+    @render(gc.GameConfigs.GameSetting, (gameSetting) => gameSetting.name)
+    logLoadScene(gameName: string) {
+        console.log(`LoadScene ${gameName}`);
+    }
+
+    @render(Connection.ConnectionStore, (store) => store.signedIn)
+    onSignedIn(signedIn: boolean) {
+        signedIn && this.inGame();
+    }
+
+    @handle(Connection.ConnectionHandlers.InGameHandler)
+    inGame() {}
+
+    // @render(Rounds.RoundStore, (store) => ({ minBet: store.minBet, maxBet: store.maxBet }))
+    // renderMinMaxBet({ minBet, maxBet }: { minBet: number; maxBet: number }) {
+    //     this.lblMinBet && (this.lblMinBet.string = FormatUtils.numberWithCommas(minBet));
+    //     this.lblMaxBet && (this.lblMaxBet.string = FormatUtils.numberWithCommas(maxBet));
+    // }
+
+    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX(id))
+    playSound(id: string) {
+        return id;
     }
 }
