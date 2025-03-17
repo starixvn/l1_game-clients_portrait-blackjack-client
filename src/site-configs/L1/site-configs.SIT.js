@@ -9,5 +9,5 @@ window.envConfig = {
     enableMsgpackParserOnNotification: true,
     subDirectory: "sit",
     SGConnectSubDomain: "l1sitconnectsite",
-    backgroundNoTranslate: true,
+    clientSubDomain: "l1uatclient",
 };

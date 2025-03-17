@@ -24,6 +24,9 @@ const defaultConfig: gc.Configs.SiteConfigs = {
         proxyPath: "blackjack",
         route: "blackjack",
     },
+    websocketOptions: {
+        timeout: 3000,
+    },
     mainObserverNamespace: "Blackjack",
     tolgeeUrl: "",
     backgroundNoTranslate: true,
