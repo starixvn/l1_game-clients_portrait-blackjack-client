@@ -1,7 +1,7 @@
 import "./../../../resources/i18n";
 
 import gc from "@sg/game-client-base";
-import { _decorator, Game, game, Label, Node, Vec3 } from "cc";
+import { _decorator, Game, game, Label, Node, Prefab, Vec3 } from "cc";
 import { AudioContainer } from "db://shared-components/game/audios/scripts/component/audio-container";
 import { ChipFlying } from "db://shared-components/game/chip-flying/scripts/components/chip-flying";
 import { GameComponentBase } from "db://shared-components/game/scripts/components/game-component-base";
@@ -15,6 +15,7 @@ import { StaticGroupId } from "db://shared-components/shared/common-components/s
 import { ComponentUtils } from "db://shared-components/shared/utils";
 import { HandsContainer } from "./hands-container";
 import { DealerComponent } from "./dealer";
+import SlidingChip from "db://shared-components/game/sliding-chip/scripts/components/sliding-chip";
 
 startGame(settings.name, containerOptions, siteConfigs, settings.namespaces);
 const { Connection, FormatUtils, GameBlackjack } = gc;
@@ -50,6 +51,9 @@ export default class GameBlackjackComponent extends GameComponentBase {
     @property(Node)
     cardBox: Node = null;
 
+    @property(Prefab)
+    prbCard: Prefab = null;
+
     @property(Node)
     btnDeal: Node = null;
 
@@ -79,6 +83,7 @@ export default class GameBlackjackComponent extends GameComponentBase {
     protected enableEventShowHideGame = true;
 
     protected cardBoxPosition = Vec3.ZERO;
+    protected chipBoxPosition = Vec3.ZERO;
     private audioContainer: AudioContainer = null;
     private isAnimating = false;
     private prevResult: any;
@@ -93,6 +98,9 @@ export default class GameBlackjackComponent extends GameComponentBase {
         this.handleStaticNodeAndSetEmptyLabels();
         this.audioContainer = this.nodeAudioContainer.getComponent(AudioContainer);
         this.cardBoxPosition = this.cardBox?.worldPosition || Vec3.ZERO;
+        this.chipBoxPosition = this.chipFlying.node?.worldPosition || Vec3.ZERO;
+        this.dealer?.init(this.cardBoxPosition, this.chipBoxPosition, this.prbCard);
+        this.handsContainer?.init(this.cardBoxPosition, this.chipFlying, this.prbCard);
     }
 
     protected registerEventShowHideGame() {
@@ -172,9 +180,14 @@ export default class GameBlackjackComponent extends GameComponentBase {
     @handle(Bets.DealHandler)
     onBtnDealClick() {}
 
-    @handle(Bets.ClearHandler)
     onBtnClearClick(): number | void {
-        return this.handsContainer.hands.length;
+        this.clearHandStore();
+        this.handsContainer.reset();
+    }
+
+    @handle(Bets.ClearHandler)
+    clearHandStore() {
+        return this.handsContainer.hands.length / 2;
     }
 
     @handle(Bets.DoubleHandler)
@@ -190,10 +203,16 @@ export default class GameBlackjackComponent extends GameComponentBase {
     onBtnStandClick() {}
 
     @handle(Bets.RebetHandler)
-    onBtnRebetClick(): number | void {}
+    onBtnRebetClick(): number | void {
+        this.onBtnNewBetClick();
+        return this.handsContainer.hands.length / 2;
+    }
 
-    // @handle(Bets.NewBetHandler)
-    onBtnNewBetClick() {}
+    @handle(Bets.NewBetHandler)
+    onBtnNewBetClick() {
+        this.handsContainer?.reset();
+        this.dealer?.reset();
+    }
 
     @render(Rounds.RoundStore, (store) => store.action, { fireImmediately: false })
     protected async handleActions(action: string) {
@@ -214,7 +233,7 @@ export default class GameBlackjackComponent extends GameComponentBase {
                 await this.handleStand();
                 break;
             case BlackjackActions.DOUBLE:
-                await this.handleDouble();
+                await this.handleHitCard();
                 break;
             case BlackjackActions.SPLIT:
                 await this.handleSplit();
@@ -224,48 +243,51 @@ export default class GameBlackjackComponent extends GameComponentBase {
         // TODO: update visibility of buttons
     }
 
-    private showResult() {
+    private finishGame() {
         // TODO: show result
+        this.dealer?.openCards();
+        // TODO: settle
     }
 
     protected async handleJoinGame() {
         await this.handsContainer?.openCards();
-        // dealer open cards
+        await this.dealer?.openCards();
     }
 
     protected async handleDealCards() {
         this.isFinish = false;
-        await this.handsContainer?.dealFirstCards(this.cardBoxPosition);
-        await this.dealer?.dealFirstCard(this.cardBoxPosition);
-        await this.handsContainer?.dealSecondCards(this.cardBoxPosition);
-        await this.dealer?.dealSecondCard(this.cardBoxPosition);
-        this.handsContainer?.setActiveHand();
-        this.isFinish && this.showResult();
+        await this.handsContainer?.dealFirstCards();
+        await this.dealer?.dealFirstCard();
+        await this.handsContainer?.dealSecondCards();
+        await this.dealer?.dealSecondCard();
+        await this.handsContainer?.setActiveHand();
+        this.isFinish && this.finishGame();
     }
 
     protected async handleHitCard() {
         this.isFinish = false;
-        await this.handsContainer?.hitCard(this.cardBoxPosition);
-        this.handsContainer?.setActiveHand();
-        this.isFinish && this.showResult();
+        await this.handsContainer?.hitCard();
+        await this.handsContainer?.setActiveHand();
+        this.isFinish && this.finishGame();
     }
 
     protected async handleStand() {
         this.isFinish = false;
-        this.handsContainer?.setActiveHand();
-        this.isFinish && this.showResult();
+        await this.handsContainer?.setActiveHand();
+        this.isFinish && this.finishGame();
     }
 
-    protected async handleDouble() {
-        this.isFinish = false;
-        await this.handsContainer?.hitCard(this.cardBoxPosition);
-        this.handsContainer?.setActiveHand();
-        this.isFinish && this.showResult();
-    }
+    // protected async handleDouble() {
+    //     this.isFinish = false;
+    //     await this.handsContainer?.hitCard(this.cardBoxPosition);
+    //     this.handsContainer?.setActiveHand();
+    //     this.isFinish && this.showResult();
+    // }
 
     protected async handleSplit() {
         // TODO: handle split
-        this.isFinish && this.showResult();
+        await this.handsContainer?.setActiveHand();
+        this.isFinish && this.finishGame();
     }
 
     protected async handleFinish() {
