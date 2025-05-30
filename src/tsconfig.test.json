@@ -11,6 +11,7 @@
             "cc": ["./tests/cocos-testing/cc"],
             "db://shared-components/*": ["./extensions/shared-components/assets/*"],
             "db://direct-shared-components/*": ["./extensions/direct-shared-components/assets/*"],
+            "db://blackjack-shared-components/*": ["./extensions/blackjack-shared-components/assets/*"],
             "db://i18n/*": ["./extensions/i18n/assets/*"]
         }
     }

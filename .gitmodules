@@ -18,3 +18,7 @@
 	path = src/extensions/i18n
 	url = ../game-client-packages/i18n.git
 	branch = main
+[submodule "src/extensions/blackjack-shared-components"]
+	path = src/extensions/blackjack-shared-components
+	url = ../game-client-packages/blackjack-shared-components.git
+	branch = main

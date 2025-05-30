@@ -28,6 +28,7 @@
         "inversify": "<rootDir>/tests/cocos-testing/inversify",
         "db://shared-components/(.*)": "<rootDir>/extensions/shared-components/assets/$1",
         "db://direct-shared-components/(.*)": "<rootDir>/extensions/direct-shared-components/assets/$1",
+        "db://blackjack-shared-components/(.*)": "<rootDir>/extensions/blackjack-shared-components/assets/$1",
         "db://i18n/(.*)": "<rootDir>/extensions/i18n/assets/$1",
         "socket.io-client/dist/socket.io.msgpack.min.js": "socket.io-client/dist/socket.io.js"
     },
